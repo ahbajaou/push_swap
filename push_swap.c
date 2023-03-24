@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/03/22 02:28:13 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:58:22 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,37 @@ void ft_error(void)
     write(1, "Error\n", 6);
     exit(0);
 }
-
+void    check_digit(char **str)
+{
+    int i = 0;
+    int j = 1;
+    while (str[j])
+    {
+        i = 0;
+        while (str[j][i])
+        {
+            if (!ft_isdigit(str[j][i]))
+                ft_error();
+            i++;
+        }
+        j++;
+    }
+}
 int main(int ac, char **av)
 {
+    int cnt = 1;
+    char **ptr = NULL;
     // int i = 0;
     if (ac < 2)
         ft_error();
-    int cnt = 1;
-    char **tmp;
-    t_push *pu;
-
-    tmp = malloc(sizeof(char *) * ac);
-    tmp[ac] = NULL;
-    pu = malloc(sizeof(t_push));
-    int i = 0;
-    while (tmp[i])
+    check_digit(av);
+    while (cnt < ac)
     {
-        tmp[i] = av[i + 1];
-        pu->push = ft_strjoin(pu->push, tmp);
-        printf("%s\n", tmp);
+        ptr = ft_split(av[cnt],' ');
+        cnt++;
+        int i = 1;
+        printf("%c\n",ptr[cnt][i]);
         i++;
     }
-    // free(pu->tmp);
-    // printf("%s\n",pu->push);
     return (0);
 }
