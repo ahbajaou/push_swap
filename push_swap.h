@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/03/22 00:52:51 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/06 02:08:55 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,20 @@
 #include <stdlib.h>
 // #include "libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
 
-# endif
-
-char	*get_next_line(int fd);
-int		ft_chr(char *str);
-size_t	ft_len(char *s);
+void	check_digit(char **str);
 char	*ft_join(char *s1, char *s2);
-char	*ft_sub(char *s, int start, int len);
+
+
 
 typedef struct t_push {
 
     int i;
     int x;
-    char *push;
+    int *arr;
+    char *str;
     char *tmp;
-    char **swap;
+    char **spl;
+
 }   t_push;
 #endif
