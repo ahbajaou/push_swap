@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-SRC = push_swap.c libft/*.c  utils/*.c
+SRC = push_swap.c libft_utils/*.c  utils/*.c
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 cc = cc
 
