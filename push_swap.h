@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/08 00:08:12 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/09 08:28:55 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ int check_sort(int *arr,int len);
 void    check_double(int *str,int len);
 void	check_digit(char **str);
 void    check_empty_space(int ac,char **av);
+void    add_arr_to_list(int *arr,int len, node *stack_a);
 void ft_error(void);
 
+typedef struct node{
+
+    int data;
+    struct node *next;
+}   node;
 
 typedef struct t_push {
 
@@ -42,4 +48,5 @@ typedef struct t_push {
     char **spl;
 
 }   t_push;
+
 #endif

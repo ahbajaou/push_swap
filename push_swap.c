@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/08 02:33:43 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/09 08:27:59 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 int main(int ac, char **av)
 {
     t_push *stack;
+    node *stack_a;
+
+    stack_a = malloc(sizeof(node));
     stack = malloc(sizeof(t_push));
     int i = 1;
     stack->i = 1;
@@ -44,6 +47,7 @@ int main(int ac, char **av)
         check_double(stack->arr,len);
         if (check_sort(stack->arr,len) == 0)
             ft_error();
+        add_arr_to_list(stack->arr,len,&stack_a);
         if (ac <= 6)
         {
             printf("dear\n");
