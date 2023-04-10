@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:50:22 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/09 15:03:39 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:55:08 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ node    *creat_node(int nb)
     new = malloc(sizeof(node));
     new->data = nb;
     new->next = NULL;
+    // printf("===%d\n",new->data);
     return (new);
 }
 
@@ -36,6 +37,7 @@ void    add_back(node **list,node *new)
 {
     node *tmp;
     tmp = *list;
+    // printf("--[%d]\n",tmp->data);
     while (tmp->next != NULL)
     {
         tmp = tmp->next;
@@ -59,19 +61,23 @@ node    *add_arr_to_list(int *arr,int len,node *stack_a)
 
     i = 0;
     stack_a = malloc(sizeof(node));
+    // stack_a = stack_a->next;
+    // stack_a->data = 13;
+    // printf("add_arr_to_list=> %d\n", stack_a->data);
     while (i < len)
     {
         add_back(&stack_a,creat_node(arr[i]));
         // printf("%d\n", stack_a->data);
         i++;
     }
-    node *tmp;
-    tmp = stack_a;
-    while (tmp != NULL)
-    {
-        printf("%d\n",tmp->data);
-        tmp = tmp->next;
-    }
+    stack_a++;
+    // node *tmp;
+    // tmp = stack_a;
+    // while (tmp != NULL)
+    // {
+    //     printf("%d\n",tmp->data);
+    //     tmp = tmp->next;
+    // }
     //  printf("{%d}\n",tmp->next->data);
     return (stack_a);
     // print_list(stack_a);
