@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/09 08:27:59 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:02:05 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ int main(int ac, char **av)
 {
     t_push *stack;
     node *stack_a;
+    node *stack_b;
 
     stack_a = malloc(sizeof(node));
+    stack_b = malloc(sizeof(node));
     stack = malloc(sizeof(t_push));
     int i = 1;
     stack->i = 1;
@@ -39,6 +41,8 @@ int main(int ac, char **av)
         check_digit(stack->spl);
         while (stack->spl[len])
             len++;
+        // printf("----%d\n",len);
+        // exit(0);
         while (j < len)
         {
             stack->arr[j] = ft_atoi(stack->spl[j]);
@@ -47,12 +51,14 @@ int main(int ac, char **av)
         check_double(stack->arr,len);
         if (check_sort(stack->arr,len) == 0)
             ft_error();
-        add_arr_to_list(stack->arr,len,&stack_a);
-        if (ac <= 6)
-        {
-            printf("dear\n");
-            exit(0);
-        }
+        stack_a = add_arr_to_list(stack->arr, len, stack_a);
+        // rotate_a(&stack_a);
+        // print_list(stack_a);
+        // if (ac <= 6)
+        // {
+        //     printf("dear\n");
+        //     exit(0);
+        // }
         // int k = 0;
         // while (k < len)
         // {

@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/09 08:28:55 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:32:32 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+typedef struct node {
+
+    int data;
+    struct node *next;
+}   node;
 
 void	check_digit(char **str);
 char    *ft_strjoin(char const *s1, char const *s2);
@@ -29,14 +35,12 @@ int check_sort(int *arr,int len);
 void    check_double(int *str,int len);
 void	check_digit(char **str);
 void    check_empty_space(int ac,char **av);
-void    add_arr_to_list(int *arr,int len, node *stack_a);
+node    *add_arr_to_list(int *arr,int len, node *stack_a);
+void    add_back(node **list,node *new);
+void    print_list(node *list);
+void   rotate_a(node **stack_a);
 void ft_error(void);
 
-typedef struct node{
-
-    int data;
-    struct node *next;
-}   node;
 
 typedef struct t_push {
 

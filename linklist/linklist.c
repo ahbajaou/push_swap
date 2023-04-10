@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:50:22 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/09 08:27:31 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:03:39 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ node    *creat_node(int nb)
 {
     node *new;
 
-    printf("here\n");
     new = malloc(sizeof(node));
     new->data = nb;
     new->next = NULL;
-
     return (new);
 }
 
@@ -31,6 +29,7 @@ void    add_font(node **list,node *new)
         new->next = *list;
         *list = new;
     }
+
 }
 
 void    add_back(node **list,node *new)
@@ -38,32 +37,42 @@ void    add_back(node **list,node *new)
     node *tmp;
     tmp = *list;
     while (tmp->next != NULL)
-        {
-            tmp = tmp->next;
-        }
-        tmp->next = new;
+    {
+        tmp = tmp->next;
+    }
+    tmp->next = new;
 }
 
-void    print_list(node **list)
+void    print_list(node *list)
 {
     node *tmp;
-    tmp = *list;
+    tmp = list;
     while (tmp != NULL)
     {
         printf("%d\n",tmp->data);
         tmp = tmp->next;
     }
 }
-void    add_arr_to_list(int *arr,int len,node *stack_a)
+node    *add_arr_to_list(int *arr,int len,node *stack_a)
 {
     int i;
 
     i = 0;
-        stack_a = malloc(sizeof(t_push));
+    stack_a = malloc(sizeof(node));
     while (i < len)
     {
-        add_font(&stack_a,creat_node(arr[i]));
-        // print_list(&stack_a);
+        add_back(&stack_a,creat_node(arr[i]));
+        // printf("%d\n", stack_a->data);
         i++;
     }
+    node *tmp;
+    tmp = stack_a;
+    while (tmp != NULL)
+    {
+        printf("%d\n",tmp->data);
+        tmp = tmp->next;
+    }
+    //  printf("{%d}\n",tmp->next->data);
+    return (stack_a);
+    // print_list(stack_a);
 }
