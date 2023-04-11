@@ -6,12 +6,12 @@
 #    By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 23:29:05 by ahbajaou          #+#    #+#              #
-#    Updated: 2023/04/10 23:31:28 by ahbajaou         ###   ########.fr        #
+#    Updated: 2023/04/11 05:28:25 by ahbajaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = push_swap.c libft_utils/*.c  utils/*.c linklist/linklist.c instructions/*.c
+SRC = push_swap.c libft_utils/*.c  utils/*.c linklist/linklist.c instructions/*.c sort_five_orless/*.c
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 cc = cc
 

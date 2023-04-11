@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/11 03:14:24 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/11 05:25:25 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,14 @@ node    *add_arr_to_list(int *arr,int len, node *stack_a);
 void    add_back(node *list,node *new);
 void    add_font(node **list,node *new);
 void    print_list(node *list);
-void    swap_a(node **stack_a);
 node    *creat_node(int nb);
+void    swap_a(node **stack_a);
+void    swap_b(node **stack_a);
+void  push_b(node **stack_a,node **stack_b);
+void  push_a(node **stack_a,node **stack_b);
 void   rotate_a(node **stack_a);
+void    sort_five_or_less(node **stack_a,int ac);
+void    rotate_b(node **stack_b);
 void ft_error(void);
 
 

@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/11 03:21:55 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/11 05:40:37 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,12 @@ int main(int ac, char **av)
         if (check_sort(stack->arr,len) == 0)
             ft_error();
         stack_a = add_arr_to_list(stack->arr, len, stack_a);
-        // rotate_a(&stack_a);
-        swap_a(&stack_a);
+
+        if (ac < 6)
+        {
+            sort_five_or_less(&stack_a,ac);
+        }
         // print_list(stack_a);
-        // if (ac <= 6)
-        // {
-        //     printf("dear\n");
-        //     exit(0);
-        // }
         // int k = 0;
         // while (k < len)
         // {
