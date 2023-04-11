@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/09 14:32:32 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/11 03:14:24 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ void    check_double(int *str,int len);
 void	check_digit(char **str);
 void    check_empty_space(int ac,char **av);
 node    *add_arr_to_list(int *arr,int len, node *stack_a);
-void    add_back(node **list,node *new);
+void    add_back(node *list,node *new);
+void    add_font(node **list,node *new);
 void    print_list(node *list);
+void    swap_a(node **stack_a);
+node    *creat_node(int nb);
 void   rotate_a(node **stack_a);
 void ft_error(void);
 

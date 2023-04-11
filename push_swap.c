@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/10 15:57:10 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/11 03:21:55 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int main(int ac, char **av)
     node *stack_a;
     node *stack_b;
 
-    stack_a = malloc(sizeof(node));
+    // stack_a = malloc(sizeof(stack_a));
+    // stack_a->data = 3;
+    // stack_a->next = NULL;
+    stack_a = creat_node(ft_atoi(av[1]));
     stack_b = malloc(sizeof(node));
     stack = malloc(sizeof(t_push));
     int i = 1;
@@ -45,6 +48,7 @@ int main(int ac, char **av)
         // exit(0);
         while (j < len)
         {
+            //printf("%s\n", stack->spl[j]);
             stack->arr[j] = ft_atoi(stack->spl[j]);
             j++;
         }
@@ -52,8 +56,9 @@ int main(int ac, char **av)
         if (check_sort(stack->arr,len) == 0)
             ft_error();
         stack_a = add_arr_to_list(stack->arr, len, stack_a);
-        rotate_a(&stack_a);
-        print_list(stack_a);
+        // rotate_a(&stack_a);
+        swap_a(&stack_a);
+        // print_list(stack_a);
         // if (ac <= 6)
         // {
         //     printf("dear\n");
