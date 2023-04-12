@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 05:17:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/12 05:17:12 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/12 07:29:59 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,37 +32,47 @@ void    sort_three(node **stack_a, node **stack_b)
     first = (*stack_a);
     seceond = (*stack_a)->next;
     three = (*stack_a)->next->next;
-    if (first->data < seceond->data)
-        {
-            if (first->data < three->data)
-            {
-                push_b(&(*stack_a),stack_b);
-                free_stack(stack_a,first->data);
-            }
-            else
-            {
-                 push_b(&(*stack_a)->next->next,stack_b);
-                  free_stack(stack_a,three->data);
-            }
-        }
-    else
-        if (seceond->data < three->data)
-        {
-            push_b(&(*stack_a)->next, stack_b);
-                free_stack(stack_a,seceond->data);
 
-        }
-        else
-        {
-              push_b(&(*stack_a)->next->next,stack_b);
-                 free_stack(stack_a,three->data);
-        }
-        sort_two(stack_a);
-        push_a(&(*stack_a),&(*stack_b));
+    node *smaller;
+    if (first->data < seceond->data && first->data < three->data)
+        smaller = first;
+    else if (seceond->data < first->data && seceond->data < three->data)
+         smaller = seceond;
+    else
+         smaller = three;
+    push_b(&smaller,stack_b);
+    free_stack(stack_a,smaller->data);
+    sort_two(stack_a);
+    push_a(stack_a,stack_b);
 }
 void    sort_4(node **stack_a,node **stack_b)
 {
-    
+    (void)stack_b;
+    node *tmp = (*stack_a);
+    node *one = tmp;
+    node *two = tmp->next;
+    node *three = tmp->next->next;
+    node *four = tmp->next->next->next;
+
+    node *smaller;
+    smaller = one;
+    if (two->data < smaller->data)
+    {
+        smaller = two;
+    }
+    if (three->data < smaller->data)
+    {
+        smaller = three;
+    }
+    if (four->data < smaller->data)
+    {
+        smaller = four;
+    }
+    push_b(&smaller,stack_b);
+    sort_three(stack_a,stack_b);
+    free_stack(stack_a,smaller->data);
+    push_a(stack_a,stack_b);
+    free_stack(stack_b,smaller->data);
 }
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac)
 {

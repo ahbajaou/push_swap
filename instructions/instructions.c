@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 09:16:46 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/12 04:49:46 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/12 07:24:50 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void    swap_a(node **stack_a)
 } 
 void  push_b(node **stack_a,node **stack_b)
 {
-    if ((*stack_a) == NULL || (*stack_a)->next == NULL)
-        return ;
+    // if ((*stack_a) == NULL || (*stack_a)->next == NULL)
+    //     return ;
     node *first;
     first = (*stack_a);
+    // printf("%d\n",first->data);  
     // if ((*stack_b) == NULL)
-        (*stack_b) = creat_node(first->data);
-    // else
-    //     add_font(&(*stack_b),creat_node(first->data));
+    (*stack_b) = creat_node(first->data);
+        // add_font(&(*stack_b),creat_node(first->data));
 }
 void  push_a(node **stack_a,node **stack_b)
 {
