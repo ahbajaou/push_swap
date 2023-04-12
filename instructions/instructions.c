@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 09:16:46 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/11 05:41:48 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/12 04:49:46 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ void  push_b(node **stack_a,node **stack_b)
         return ;
     node *first;
     first = (*stack_a);
-    (*stack_b) = creat_node(1337);
+    // if ((*stack_b) == NULL)
+        (*stack_b) = creat_node(first->data);
+    // else
+    //     add_font(&(*stack_b),creat_node(first->data));
 }
 void  push_a(node **stack_a,node **stack_b)
 {
@@ -58,6 +61,7 @@ void  push_a(node **stack_a,node **stack_b)
     node *first;
     first = (*stack_b);
     add_font(&(*stack_a),creat_node(first->data));
+    // (*stack_a) = creat_node(first->data);
 }
 
 void    swap_b(node **stack_b)
@@ -85,3 +89,4 @@ void    rotate_b(node **stack_b)
         (*stack_b) = (*stack_b)->next;
         tmp->next->next = NULL;
 }
+

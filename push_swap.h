@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/11 05:25:25 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/12 03:24:20 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void    swap_b(node **stack_a);
 void  push_b(node **stack_a,node **stack_b);
 void  push_a(node **stack_a,node **stack_b);
 void   rotate_a(node **stack_a);
-void    sort_five_or_less(node **stack_a,int ac);
+void    free_stack(node **stack,int nb);
+void    sort_five_or_less(node **stack_a,node **stack_b ,int ac);
 void    rotate_b(node **stack_b);
 void ft_error(void);
 

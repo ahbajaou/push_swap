@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:50:22 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/11 02:39:53 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/12 05:08:38 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,34 @@ void    print_list(node *list)
     {
         printf("%d\n",tmp->data);
         tmp = tmp->next;
+    }
+}
+void    free_stack(node **stack,int nb)
+{
+    node *tmp = (*stack);
+    if ((*stack) != NULL)
+    {
+        if (tmp->data != nb)
+        {
+            while (tmp->next != NULL)
+            {
+                if (tmp->next->data == nb)
+                {
+                    node *del = tmp->next;
+                    tmp->next = tmp->next->next;
+                    free(del);
+                    return ;
+                }
+                tmp = tmp->next;
+            }
+        }
+        else
+        {
+            node *del = tmp;
+            (*stack) = tmp->next;
+            free(del);
+        }
+
     }
 }
 node   *add_arr_to_list(int *arr,int len,node *stack_a)
