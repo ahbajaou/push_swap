@@ -57,9 +57,10 @@ int main(int ac, char **av)
             ft_error();
         stack_a = add_arr_to_list(stack->arr, len, stack_a);
 
-        if (ac < 6)
+        if (ac <= 6)
         {
             sort_five_or_less(&stack_a,&stack_b, ac);
+            // free_stack(&stack_b,stack_b->data);
         }
         print_list(stack_a);
         // int k = 0;

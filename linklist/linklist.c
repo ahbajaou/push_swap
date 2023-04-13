@@ -46,11 +46,13 @@ void    add_back(node *list,node *new)
         new->next = NULL; 
     }
     else
+    {
         while (tmp->next != NULL)
         {
             tmp = tmp->next;
         }
         tmp->next = new;
+    }
 }
 
 void    print_list(node *list)

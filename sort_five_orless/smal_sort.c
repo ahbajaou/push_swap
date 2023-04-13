@@ -42,6 +42,9 @@ void    sort_three(node **stack_a, node **stack_b)
 	free_stack(stack_a,smaller->data);
 	sort_two(stack_a);
 	push_a(stack_a,stack_b);
+	free_stack(stack_b,smaller->data);
+	// free_stack(stack_b,smaller->next->data);
+	// printf("<<<<<%d\n",smaller->data);
 }
 void    sort_4(node **stack_a,node **stack_b)
 {
@@ -65,10 +68,34 @@ void    sort_4(node **stack_a,node **stack_b)
 	sort_three(stack_a,stack_b);
 	push_a(stack_a,&(*stack_b)->next);
 	free_stack(stack_b,smaller->data);
+	// free_stack(stack_b,smaller->next->data);
+
+	// printf(">>>>%d\n",smaller->next->data);
 }
 void    sort_five(node **stack_a,node **stack_b)
 {
-	
+	node *one = (*stack_a);
+	node *two = (*stack_a)->next;
+	node *three = (*stack_a)->next->next;
+	node *four = (*stack_a)->next->next->next;
+	node *five = (*stack_a)->next->next->next->next;
+
+	node *smaller = one;
+
+	if (two->data < smaller->data)
+		smaller = two;
+	if (three->data < smaller->data)
+		smaller = three;
+	if (four->data < smaller->data)
+		smaller = four;
+	if (five->data < smaller->data)
+		smaller = five;
+	push_b(&smaller,stack_b);
+	free_stack(stack_a,smaller->data);
+	sort_4(stack_a,stack_b);
+	push_a(stack_a,&(*stack_b)->next);
+	free_stack(stack_b,smaller->next->data);
+	// free_stack(stack_b,smaller->data);
 }
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac)
 {
@@ -79,7 +106,6 @@ void    sort_five_or_less(node **stack_a,node **stack_b ,int ac)
 	else if (ac == 4)
 	{
 		sort_three(stack_a,stack_b);
-		free_stack(stack_b,(*stack_b)->data);
 	}
 	else if (ac == 5)
 	{
