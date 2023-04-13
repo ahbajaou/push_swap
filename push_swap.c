@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/12 15:11:30 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:37:14 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int main(int ac, char **av)
     // stack_a = malloc(sizeof(stack_a));
     // stack_a->data = 3;
     // stack_a->next = NULL;
+    if (ac < 2)
+        return (0);
     stack_a = creat_node(ft_atoi(av[1]));
     stack_b = malloc(sizeof(node));
     stack = malloc(sizeof(t_push));

@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 05:17:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/12 16:17:37 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:42:40 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 void    sort_two(node **stack_a)
 {
-
-	node *first = (*stack_a);
-	node *second = (*stack_a)->next;
-	if (first->data < second->data)
+	node *tmp = (*stack_a);
+	int second = tmp->data;
+	int first = tmp->next->data;
+	if (first > second)
+	{
+		printf("here\n");
 		swap_a(stack_a);
+
+	}
 }
 void    sort_three(node **stack_a, node **stack_b)
 {
