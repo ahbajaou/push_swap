@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:50:22 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/12 05:08:38 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:20:04 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ node   *add_arr_to_list(int *arr,int len,node *stack_a)
     while (i < len)
     {
 
-        add_font(&stack_a, creat_node(arr[i]));
+        add_back(stack_a, creat_node(arr[i]));
 
         i++;
     }
