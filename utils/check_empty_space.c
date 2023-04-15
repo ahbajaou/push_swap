@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 20:26:29 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/08 02:35:57 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:17:05 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,8 @@ void    check_empty_space(int ac,char **av)
     {
         while (i < ac)
         {
-            if(!av[i][0])
+            if(!av[i][0] || av[i][0] == ' ')
                 ft_error();
-            int j = 0;
-            while (av[i][j])
-            {
-                if (av[i][0] == ' ' && av[i][1] == '\0')
-                        ft_error();
-                j++;
-            }
             i++;
         }
     }

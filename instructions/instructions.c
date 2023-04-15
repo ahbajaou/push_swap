@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 09:16:46 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/14 17:27:49 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 00:38:36 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,19 +75,22 @@ void    swap_a(node **stack_a)
 } 
 void  push_b(node **stack_a,node **stack_b)
 {
-	node *first = (*stack_a);
-		(*stack_b) = first;
-		(*stack_a) = (*stack_a)->next;
 
-	// (*stack_b) = NULL;
+		node *tmp = (*stack_a);
+		(*stack_a) = (*stack_a)->next;
+		tmp->next = (*stack_b);
+		(*stack_b) = tmp;
+
+
 	write(1,"pb\n",3);
 
 }
 void  push_a(node **stack_a,node **stack_b)
 {
-	(*stack_a) = (*stack_b);
-	(*stack_b) = (*stack_b)->next;
-
+		node *tmp = (*stack_b);
+		(*stack_b) = (*stack_b)->next;
+		 tmp->next = (*stack_a);
+		 (*stack_a) = tmp;
 	write(1,"pa\n",3);
 }
 
@@ -97,7 +100,7 @@ void    swap_b(node **stack_b)
 		return ;
 	int tmp;
 	node *first = (*stack_b);
-	node *second = (*stack_b)->next;
+	node *second = (*stack_b)->next; 
 	tmp = first->data;
 	first->data = second->data;
 	second->data = tmp;
