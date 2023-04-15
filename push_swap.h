@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/14 21:02:21 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 02:35:50 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void    sort_five_or_less(node **stack_a,node **stack_b ,int ac);
 void    rotate_b(node **stack_b);
 void	rev_rotate_b(node **stack_b);
 void	rev_rotate_a(node **stack_a);
+int     leghtlist(node **stack);
 void ft_error(void);
 
 

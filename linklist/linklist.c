@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 07:50:22 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/14 23:54:21 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 02:37:09 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,19 @@ void    free_stack(node **stack,int nb)
         }
 
     }
+}
+int     leghtlist(node **stack)
+{
+    int i;
+
+    i = 0;
+    node *tmp = (*stack);
+    while (tmp)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    return (i);
 }
 node   *add_arr_to_list(int *arr,int len,node *stack_a)
 {

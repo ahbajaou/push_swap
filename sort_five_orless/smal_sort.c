@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 05:17:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 00:14:53 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 02:53:50 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,28 @@ void    sort_three(node **stack_a, node **stack_b)
 
 void	sort_45(node **stack_a,node **stack_b)
 {
-	push_b(stack_a,stack_b);
-	push_b(stack_a,stack_b);
-	sort_three(stack_a,stack_b);
-	push_a(stack_a,stack_b);
-	rotate_a(stack_a);
-	push_a(stack_a,stack_b);
-	
+	(void)(*stack_b);
+	node *tmp = (*stack_a);
+	int smaller = (*stack_a)->data;
+	int i = 0;
+	int len = 0;
+	while (tmp)
+	{
+		if (tmp->data > smaller)
+		{
+			smaller = tmp->data;
+			i++;
+		}
+		tmp = tmp->next;
+	}
+	len = leghtlist(stack_a);
+	while (len > i)
+	{
+		len--;
+	}
+	printf("i === %d\n",len);
+	printf("\n");
+	printf(">>>>>>>%d\n",smaller);
 	// print_list((*stack_b));
 }
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac)
