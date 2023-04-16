@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 05:17:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 02:53:50 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:03:23 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,44 +49,58 @@ void    sort_three(node **stack_a, node **stack_b)
 		}
 }
 
-void	sort_45(node **stack_a,node **stack_b)
+void	sort_4(node **stack_a,node **stack_b)
+{
+	node ronowa;
+	ronowa.index = 0;
+	ronowa.index = check_position(stack_a);
+	if (ronowa.index == 2)
+	{
+		rotate_a(stack_a);
+		rotate_a(stack_a);
+	}
+	else if (ronowa.index == 1)
+		swap_a(stack_a);
+	else if (ronowa.index == 3)
+		rev_rotate_a(stack_a);
+	push_b(stack_a,stack_b);
+	sort_three(stack_a,stack_b);
+	push_a(stack_a,stack_b);
+}
+void	sort_5(node **stack_a,node **stack_b)
 {
 	(void)(*stack_b);
-	node *tmp = (*stack_a);
-	int smaller = (*stack_a)->data;
-	int i = 0;
-	int len = 0;
-	while (tmp)
-	{
-		if (tmp->data > smaller)
+	node ronowa;
+	ronowa.index = 0;
+	ronowa.index = check_position(stack_a);
+
+	if (ronowa.index == 1)
+		swap_a(stack_a);
+	else if (ronowa.index == 2)
 		{
-			smaller = tmp->data;
-			i++;
+			rotate_a(stack_a);
+			rotate_a(stack_a);
 		}
-		tmp = tmp->next;
-	}
-	len = leghtlist(stack_a);
-	while (len > i)
+	else if (ronowa.index == 3)
 	{
-		len--;
+		rev_rotate_a(stack_a);
+		rev_rotate_a(stack_a);
 	}
-	printf("i === %d\n",len);
-	printf("\n");
-	printf(">>>>>>>%d\n",smaller);
-	// print_list((*stack_b));
+	else if (ronowa.index == 4)
+		rev_rotate_a(stack_a);
+	push_b(stack_a,stack_b);
+	sort_4(stack_a,stack_b);
+	push_a(stack_a,stack_b);
+
 }
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac)
 {
 	if (ac == 3)
-	{
 		sort_two(stack_a);
-	}
 	else if (ac == 4)
-	{
 		sort_three(stack_a,stack_b);
-	}
-	else if (ac <= 6)
-	{
-		sort_45(stack_a,stack_b);
-	}
+	else if (ac == 5)
+		sort_4(stack_a,stack_b);
+	else if (ac == 6)
+		sort_5(stack_a,stack_b);
 }

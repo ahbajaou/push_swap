@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 00:13:14 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 22:19:01 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,8 @@ int main(int ac, char **av)
         if (ac <= 6)
         {
             sort_five_or_less(&stack_a,&stack_b, ac);
-            // free_stack(&stack_b,stack_b->data);
         }
-        print_list(stack_a);
+        print_list(stack_b);
         // int k = 0;
         // while (k < len)
         // {
@@ -72,6 +71,7 @@ int main(int ac, char **av)
         //     k++;
         // }
         // system("leaks push_swap");
+
         free(tmp);
     }
     return(0);

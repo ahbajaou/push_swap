@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 02:35:50 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 21:12:00 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct node {
 
+    int index;
     int data;
     struct node *next;
 }   node;
@@ -47,6 +48,7 @@ void  push_a(node **stack_a,node **stack_b);
 void   rotate_a(node **stack_a);
 void    free_stack(node **stack,int nb);
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac);
+int   check_position(node **stack_a);
 void    rotate_b(node **stack_b);
 void	rev_rotate_b(node **stack_b);
 void	rev_rotate_a(node **stack_a);

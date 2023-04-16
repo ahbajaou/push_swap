@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 09:16:46 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 00:38:36 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/15 21:06:43 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,18 @@ void    swap_a(node **stack_a)
 		write(1,"sa\n",3);
 	}
 } 
+void    swap_b(node **stack_b)
+{
+	if ((*stack_b) == NULL || (*stack_b)->next == NULL)
+		return ;
+	node *first = (*stack_b);
+	node *second = (*stack_b)->next; 
+
+	(*stack_b) = second;
+	first->next = second->next;
+	second->next = first;
+	write(1,"sb\n",3);
+}
 void  push_b(node **stack_a,node **stack_b)
 {
 
@@ -94,21 +106,6 @@ void  push_a(node **stack_a,node **stack_b)
 	write(1,"pa\n",3);
 }
 
-void    swap_b(node **stack_b)
-{
-	if ((*stack_b) == NULL || (*stack_b)->next == NULL)
-		return ;
-	int tmp;
-	node *first = (*stack_b);
-	node *second = (*stack_b)->next; 
-	tmp = first->data;
-	first->data = second->data;
-	second->data = tmp;
-	(*stack_b) = second;
-	(*stack_b)->next = first;
-	(*stack_b)->next->next = NULL;
-	write(1,"sb\n",3);
-}
 
 void    rotate_b(node **stack_b)
 {
