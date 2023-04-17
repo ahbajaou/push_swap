@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:56 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 21:12:00 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:53:04 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,19 @@ typedef struct node {
     int data;
     struct node *next;
 }   node;
+
+typedef struct t_push {
+
+    int i;
+    int x;
+    int size;
+    int len;
+    int *arr;
+    char *str;
+    char *tmp;
+    char **spl;
+
+}   t_push;
 
 void	check_digit(char **str);
 char    *ft_strjoin(char const *s1, char const *s2);
@@ -49,22 +62,14 @@ void   rotate_a(node **stack_a);
 void    free_stack(node **stack,int nb);
 void    sort_five_or_less(node **stack_a,node **stack_b ,int ac);
 int   check_position(node **stack_a);
+void    sort_infiniti(node **stack_a,node **stack_b,t_push *ronowa);
 void    rotate_b(node **stack_b);
 void	rev_rotate_b(node **stack_b);
 void	rev_rotate_a(node **stack_a);
+void    sort_in_tab(t_push *stack);
 int     leghtlist(node **stack);
 void ft_error(void);
 
 
-typedef struct t_push {
-
-    int i;
-    int x;
-    int *arr;
-    char *str;
-    char *tmp;
-    char **spl;
-
-}   t_push;
 
 #endif

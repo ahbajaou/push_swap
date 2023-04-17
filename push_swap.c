@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 23:28:53 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/15 22:19:01 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:11:08 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,38 +41,29 @@ int main(int ac, char **av)
             i++;
         }
        int j = 0;
-       int len = 0;
         stack->spl = ft_split(tmp,' ');
         check_digit(stack->spl);
-        while (stack->spl[len])
-            len++;
-        // printf("----%d\n",len);
-        // exit(0);
-        while (j < len)
+        stack->len = 0;
+        while (stack->spl[stack->len])
+            stack->len++;
+    
+        while (j < stack->len)
         {
-            //printf("%s\n", stack->spl[j]);
             stack->arr[j] = ft_atoi(stack->spl[j]);
             j++;
         }
-        check_double(stack->arr,len);
-        if (check_sort(stack->arr,len) == 0)
+        check_double(stack->arr,stack->len);
+        if (check_sort(stack->arr,stack->len) == 0)
             ft_error();
-        stack_a = add_arr_to_list(stack->arr, len, stack_a);
-
+        stack_a = add_arr_to_list(stack->arr, stack->len, stack_a);
         if (ac <= 6)
         {
             sort_five_or_less(&stack_a,&stack_b, ac);
         }
+        sort_infiniti(&stack_a,&stack_b,stack);
         print_list(stack_b);
-        // int k = 0;
-        // while (k < len)
-        // {
-        //     printf("%d\n",stack->arr[k]);
-        //     k++;
-        // }
-        // system("leaks push_swap");
-
         free(tmp);
+        // system("leaks push_swap");
     }
     return(0);
 }
