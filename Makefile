@@ -6,7 +6,7 @@
 #    By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 23:29:05 by ahbajaou          #+#    #+#              #
-#    Updated: 2023/04/17 23:26:36 by ahbajaou         ###   ########.fr        #
+#    Updated: 2023/04/18 21:22:08 by ahbajaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ cc = cc
 
 all : push_swap
 
-push_swap :
+push_swap : $(SRC)
 	$(cc) $(CFLAGS) $(SRC) -o  push_swap
 
 clean :

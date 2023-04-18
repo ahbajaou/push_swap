@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 05:02:17 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/18 06:31:22 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:05:03 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,6 @@ void	push_smaltob(t_node **stack_a, t_node **stack_b, t_push *ronowa)
 			&& (*stack_a)->data <= ronowa->arr[ronowa->range + i])
 		{
 			push_b(stack_a, stack_b);
-			if (leghtlist(stack_b) > 1
-				&& (*stack_b)->data < (*stack_b)->next->data)
-				swap_b(stack_b);
 			i++;
 		}
 		else
