@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 05:17:24 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/18 05:45:25 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:12:35 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,13 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 
 void	sort_five_or_less(t_node **stack_a, t_node **stack_b, int ac)
 {
-	if (ac == 3)
+	(void)ac;
+	if (leghtlist((stack_a)) == 2)
 		sort_two(stack_a);
-	else if (ac == 4)
+	else if (leghtlist((stack_a)) == 3)
 		sort_3(stack_a);
-	else if (ac == 5)
+	else if (leghtlist((stack_a)) == 4)
 		sort_4(stack_a, stack_b);
-	else if (ac == 6)
+	else if (leghtlist((stack_a)) == 5)
 		sort_5(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:19:08 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/18 05:49:44 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:32:23 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	check_sign(const char *str)
 			ft_error();
 		if ((str[0] == '-' && str[1] == '+')
 			|| (str[0] == '+' && str[1] == '-'))
+			ft_error();
+		if (str[i] && str[i + 1] == '-' && str[i + 2])
+			ft_error();
+		if (str[i] && str[i + 1] == '+' && str[i + 2])
 			ft_error();
 		i++;
 	}

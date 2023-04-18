@@ -6,7 +6,7 @@
 /*   By: ahbajaou <ahbajaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 09:16:46 by ahbajaou          #+#    #+#             */
-/*   Updated: 2023/04/18 05:50:26 by ahbajaou         ###   ########.fr       */
+/*   Updated: 2023/04/18 22:02:48 by ahbajaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	rotate_a(t_node **stack_a)
 	{
 		tmp = tmp->next;
 	}
-	write(1, "ra\n", 3);
 	tmp->next = (*stack_a);
 	(*stack_a) = (*stack_a)->next;
 	tmp->next->next = NULL;
+	write(1, "ra\n", 3);
 }
 
 void	rev_rotate_a(t_node **stack_a)
